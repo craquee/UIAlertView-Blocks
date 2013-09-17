@@ -10,7 +10,7 @@ A category for UIAlertView which allows you to use blocks to handle the pressed 
   s.homepage     = "https://github.com/jivadevoe/UIAlertView-Blocks"
 
 
-  s.license      = { :type => 'MIT', :file => 'FILE_LICENSE' }
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
   s.author       = 'Jiva DeVoe'
 
