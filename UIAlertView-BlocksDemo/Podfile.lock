@@ -1,0 +1,14 @@
+PODS:
+  - UIAlertView-Blocks (0.0.3)
+
+DEPENDENCIES:
+  - UIAlertView-Blocks (from `..`)
+
+EXTERNAL SOURCES:
+  UIAlertView-Blocks:
+    :path: ..
+
+SPEC CHECKSUMS:
+  UIAlertView-Blocks: 5dcba6773352e7913423fa42db8799ae039e15bb
+
+COCOAPODS: 0.24.0
