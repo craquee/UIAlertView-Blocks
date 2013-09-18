@@ -6,17 +6,18 @@
 //  Copyright 2011 Random Ideas, LLC. All rights reserved.
 //
 
+typedef void (^ButtonDidClicked)(NSString *stringFirst, NSString *stringSecond);
+
 #import <Foundation/Foundation.h>
 
 @interface RIButtonItem : NSObject
-{
-    NSString *label;
-    void (^action)();
-}
-@property (retain, nonatomic) NSString *label;
-@property (copy, nonatomic) void (^action)();
+
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic, copy) ButtonDidClicked buttonDidClicked;
+
 +(id)item;
 +(id)itemWithLabel:(NSString *)inLabel;
-+(id)itemWithLabel:(NSString *)inLabel action:(void(^)(void))action;
++(id)itemWithLabel:(NSString *)inLabel buttonDidClicked:(ButtonDidClicked)buttonDidClicked;
+
 @end
 

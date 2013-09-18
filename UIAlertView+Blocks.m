@@ -64,8 +64,17 @@ static NSString *RI_BUTTON_ASS_KEY = @"com.random-ideas.BUTTONS";
     {
         NSArray *buttonsArray = objc_getAssociatedObject(self, (__bridge const void *)RI_BUTTON_ASS_KEY);
         RIButtonItem *item = [buttonsArray objectAtIndex:buttonIndex];
-        if(item.action)
-            item.action();
+        if(item.buttonDidClicked) {
+            if (alertView.alertViewStyle == UIAlertViewStyleLoginAndPasswordInput) {
+                item.buttonDidClicked([[alertView textFieldAtIndex:0] text],
+                                      [[alertView textFieldAtIndex:1] text]);
+            } else if (alertView.alertViewStyle == UIAlertViewStylePlainTextInput ||
+                       alertView.alertViewStyle == UIAlertViewStyleSecureTextInput) {
+                item.buttonDidClicked([[alertView textFieldAtIndex:0] text], nil);
+            } else {
+                item.buttonDidClicked(nil, nil);
+            }
+        }
     }
     
     objc_setAssociatedObject(self, (__bridge const void *)RI_BUTTON_ASS_KEY, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

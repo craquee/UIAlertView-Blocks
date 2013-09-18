@@ -9,25 +9,23 @@
 #import "RIButtonItem.h"
 
 @implementation RIButtonItem
-@synthesize label;
-@synthesize action;
 
 +(id)item
 {
-    return [self new];
+  return [self new];
 }
 
 +(id)itemWithLabel:(NSString *)inLabel
 {
-    RIButtonItem *newItem = [self item];
-    [newItem setLabel:inLabel];
-    return newItem;
+  RIButtonItem *newItem = [self item];
+  [newItem setLabel:inLabel];
+  return newItem;
 }
 
-+(id)itemWithLabel:(NSString *)inLabel action:(void(^)(void))action
++(id)itemWithLabel:(NSString *)inLabel buttonDidClicked:(ButtonDidClicked)buttonDidClicked
 {
   RIButtonItem *newItem = [self itemWithLabel:inLabel];
-  [newItem setAction:action];
+  [newItem setButtonDidClicked:buttonDidClicked];
   return newItem;
 }
 
