@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "UIAlertView-Blocks"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A category for UIAlertView which allows you to use blocks to handle the pressed button events rather than implementing a delegate."
 
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ A category for UIAlertView which allows you to use blocks to handle the pressed 
 
   s.platform     = :ios, '5.1'
 
-  s.source       = { :git => "git@github.com:craquee/UIAlertView-Blocks.git", :tag => "0.0.1" }
+  s.source       = { :git => "git@github.com:craquee/UIAlertView-Blocks.git", :tag => "0.0.2" }
 
   s.source_files  = '*.{h,m}'
 
